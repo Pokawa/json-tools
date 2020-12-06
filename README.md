@@ -5,4 +5,4 @@ Grupa gamma I1.1
 - Hubert Cwajda
 - Jan Todek
 - Kacper Trzeciak
-- nest Cichocki
+- Ernest Cichocki
