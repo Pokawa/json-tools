@@ -9,6 +9,13 @@ public class JsonTransformer {
 
     public String transform(JSONObject jsonObject) {
         for (String transformation : transforms) {
+
+            //Minification transform
+            if (transformation.equalsIgnoreCase("minify")) {
+                JsonMinifier minifier = new JsonMinifier(jsonObject);
+                jsonObject = new JSONObject(minifier.getJson());
+            }
+
         }
         return jsonObject.getJson();
     }
