@@ -2,6 +2,8 @@ package pl.put.poznan.transformer.rest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
+import pl.put.poznan.transformer.logic.JSONObject;
+import pl.put.poznan.transformer.logic.JsonTransformer;
 
 import java.util.Arrays;
 
@@ -20,6 +22,9 @@ public class JsonToolsController {
         logger.debug(json);
         logger.debug(Arrays.toString(transforms));
 
+        JsonTransformer jsonTransformer = new JsonTransformer(transforms);
+        json = jsonTransformer.transform(new JSONObject(json));
+
         return json;
     }
 
@@ -30,6 +35,9 @@ public class JsonToolsController {
         // log the parameters
         logger.debug(json);
         logger.debug(Arrays.toString(transforms));
+
+        JsonTransformer jsonTransformer = new JsonTransformer(transforms);
+        json = jsonTransformer.transform(new JSONObject(json));
 
         return json;
     }
