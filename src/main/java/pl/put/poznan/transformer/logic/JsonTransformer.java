@@ -6,6 +6,12 @@ public class JsonTransformer {
     public JsonTransformer(String[] transforms) {
         this.transforms = transforms;
     }
+    
+     /**
+     * This method processes query form URL
+     * @param jsonObject which has content of query's body
+     * @return string with wanted changes
+     */
 
     public String transform(JSONObject jsonObject) {
         for (String transformation : transforms) {
