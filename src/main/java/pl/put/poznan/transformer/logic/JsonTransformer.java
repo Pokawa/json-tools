@@ -21,7 +21,7 @@ public class JsonTransformer {
                 JsonMinifier minifier = new JsonMinifier(jsonObject);
                 jsonObject = new JSONObject(minifier.getJson());
             }
-            //formatowanie jsona
+            //json formatting
             else if (transformation.equalsIgnoreCase("fullForm")){
                 JsonFullFormMaker fullForm = new JsonFullFormMaker(jsonObject);
                 jsonObject = new JSONObject(fullForm.getJson());
