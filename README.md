@@ -6,3 +6,5 @@ Grupa gamma I1.1
 - Jan Todek
 - Kacper Trzeciak
 - Ernest Cichocki
+
+[Diagram UML]{./diagram.png}
