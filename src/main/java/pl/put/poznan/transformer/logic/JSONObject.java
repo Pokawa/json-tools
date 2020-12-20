@@ -10,7 +10,10 @@ public class JSONObject {
     }
 
     public JSONObject(){}
-
+    /**
+     * 
+     * @return String that is JSON
+     */
     public String getJson() {
         return json;
     }
