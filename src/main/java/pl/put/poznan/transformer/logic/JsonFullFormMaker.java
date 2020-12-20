@@ -9,7 +9,6 @@ public class JsonFullFormMaker extends JsonDecorator {
     public JsonFullFormMaker(JSONObject jsonObject){ super(jsonObject); }
 
 
-
     @Override
     public String getJson(){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
