@@ -21,7 +21,7 @@ public class JsonTransformer {
                 jsonObject = new JSONObject(fullForm.getJson());
             }
             else if (transformation.startsWith("exclude")){
-                JsonFilter filter = new JsonFilter(jsonObject,transformation);
+                JsonFilter filter = new JsonFilter(jsonObject,transformation.substring(7));
                 jsonObject = new JSONObject(filter.getJson());
             }
 
