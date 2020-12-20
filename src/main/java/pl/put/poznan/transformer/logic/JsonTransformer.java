@@ -1,8 +1,16 @@
 package pl.put.poznan.transformer.logic;
 
+
+/**
+ * This class connects decorators
+ */
 public class JsonTransformer {
     private final String[] transforms;
-
+    
+    /**
+     * Contructor
+     * @param transforms list of transforms to perform
+     */
     public JsonTransformer(String[] transforms) {
         this.transforms = transforms;
     }
