@@ -22,25 +22,22 @@ public class JsonTransformer {
      */
 
     public String transform(JSONObject jsonObject) {
+        JSONObject decorators = jsonObject;
         for (String transformation : transforms) {
 
             //Minification transform
             if (transformation.equalsIgnoreCase("minify")) {
-                JsonMinifier minifier = new JsonMinifier(jsonObject);
-                jsonObject = new JSONObject(minifier.getJson());
+                decorators = new JsonMinifier(decorators);
             }
             //json formatting
             else if (transformation.equalsIgnoreCase("fullForm")){
-                JsonFullFormMaker fullForm = new JsonFullFormMaker(jsonObject);
-                jsonObject = new JSONObject(fullForm.getJson());
+                decorators = new JsonFullFormMaker(decorators);
             }
             //Excluding keys
             else if (transformation.startsWith("exclude")){
-                JsonFilter filter = new JsonFilter(jsonObject,transformation.substring(7));
-                jsonObject = new JSONObject(filter.getJson());
+                decorators = new JsonFilter(decorators,transformation.substring(7));
             }
-
         }
-        return jsonObject.getJson();
+        return decorators.getJson();
     }
 }

@@ -21,6 +21,7 @@ public class JsonToolsController {
         // log the parameters
         logger.debug(json);
         logger.debug(Arrays.toString(transforms));
+        logger.info("GET request");
 
         JsonTransformer jsonTransformer = new JsonTransformer(transforms);
         json = jsonTransformer.transform(new JSONObject(json));
@@ -35,6 +36,7 @@ public class JsonToolsController {
         // log the parameters
         logger.debug(json);
         logger.debug(Arrays.toString(transforms));
+        logger.info("POST request");
 
         JsonTransformer jsonTransformer = new JsonTransformer(transforms);
         json = jsonTransformer.transform(new JSONObject(json));
