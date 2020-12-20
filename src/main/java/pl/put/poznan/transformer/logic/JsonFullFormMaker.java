@@ -7,7 +7,11 @@ import com.google.gson.JsonParser;
 
 public class JsonFullFormMaker extends JsonDecorator {
     public JsonFullFormMaker(JSONObject jsonObject){ super(jsonObject); }
-
+     /**
+     * this method takes string without white signs
+     * @return formatted json, which is more human-readable
+     */
+    
     @Override
     public String getJson(){
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
