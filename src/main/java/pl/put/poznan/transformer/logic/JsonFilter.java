@@ -1,7 +1,9 @@
 package pl.put.poznan.transformer.logic;
 
 import org.json.*;
-
+/**
+ * extends {@see JsonDecorator} and adds excludedKey that stors key to be removed from JSON
+ */
 public class JsonFilter extends JsonDecorator {
     private String excludedKey;
 
