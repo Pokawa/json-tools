@@ -20,6 +20,7 @@ public class JsonTransformer {
                 JsonFullFormMaker fullForm = new JsonFullFormMaker(jsonObject);
                 jsonObject = new JSONObject(fullForm.getJson());
             }
+            //Excluding keys
             else if (transformation.startsWith("exclude")){
                 JsonFilter filter = new JsonFilter(jsonObject,transformation.substring(7));
                 jsonObject = new JSONObject(filter.getJson());
