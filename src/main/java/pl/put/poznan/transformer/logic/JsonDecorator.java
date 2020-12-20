@@ -5,11 +5,18 @@ package pl.put.poznan.transformer.logic;
  */
 abstract public class JsonDecorator extends JSONObject{
     protected JSONObject jsonObject;
-
+    
+    /**
+    * class constructor
+    */
     public JsonDecorator(JSONObject jsonObject){
         this.jsonObject = jsonObject;
     }
-
+    
+    /**
+    * basic getter (actually never in use)
+    */
+    
     @Override
     public String getJson() {
         return jsonObject.getJson();
