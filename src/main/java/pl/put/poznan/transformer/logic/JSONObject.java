@@ -4,7 +4,10 @@ package pl.put.poznan.transformer.logic;
  */
 public class JSONObject {
     private String json;
-
+    
+    /*
+    * constructor, asigns string to class's variable
+    */
     public JSONObject(String json){
         this.json = json;
     }
