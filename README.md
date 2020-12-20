@@ -7,4 +7,4 @@ Grupa gamma I1.1
 - Kacper Trzeciak
 - Ernest Cichocki
 
-[./diagram.png]{Diagram UML}
+[Diagram UML](./diagram.png)
