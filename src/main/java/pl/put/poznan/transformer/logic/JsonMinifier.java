@@ -1,6 +1,12 @@
 package pl.put.poznan.transformer.logic;
 
+/**
+ * Decorator of JSONObject, removes white chars
+ */
 public class JsonMinifier extends JsonDecorator {
+    /**
+     * Constructor
+     */
     public JsonMinifier(JSONObject jsonObject) {
         super(jsonObject);
     }
