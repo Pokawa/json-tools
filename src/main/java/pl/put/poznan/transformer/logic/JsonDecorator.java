@@ -1,7 +1,7 @@
 package pl.put.poznan.transformer.logic;
 
 /**
- * This is just an example to show that the logic should be outside the REST service.
+ * This class is an abstract class, that is decorator of the decorator pattern approach
  */
 abstract public class JsonDecorator extends JSONObject{
     protected JSONObject jsonObject;
