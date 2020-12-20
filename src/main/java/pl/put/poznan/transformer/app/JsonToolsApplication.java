@@ -5,6 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication(scanBasePackages = {"pl.put.poznan.transformer.rest"})
+/**
+ * Runs whole application
+ */
 public class JsonToolsApplication {
 
     public static void main(String[] args) {
