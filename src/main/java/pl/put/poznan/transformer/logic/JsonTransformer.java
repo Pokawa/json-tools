@@ -35,7 +35,11 @@ public class JsonTransformer {
             }
             //Excluding keys
             else if (transformation.startsWith("exclude")){
-                decorators = new JsonFilter(decorators,transformation.substring(7));
+                decorators = new JsonBlacklistFilter(decorators,transformation.substring(7));
+            }
+            //Whitelisting keys
+            else if (transformation.startsWith("include")){
+                decorators = new JsonWhitelistFilter(decorators,transformation.substring(7));
             }
         }
         return decorators.getJson();
