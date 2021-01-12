@@ -27,6 +27,10 @@ public class JsonWhitelistFilter extends JsonDecorator {
         return jo.toString();
     }
 
+    /**
+     * Helper method to determine if JSON key is in array of keys to be spared in JSON keys mass murder
+     * @return Boolen if given key is in includeKeys
+     */
     private boolean isIncluded(String key) {
         for (String includedKey : includeKeys) {
             if (includedKey.equals(key))
