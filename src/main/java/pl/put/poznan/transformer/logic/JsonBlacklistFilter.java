@@ -4,10 +4,10 @@ import org.json.*;
 /**
  * extends {@see JsonDecorator} and adds excludedKey that stors key to be removed from JSON
  */
-public class JsonFilter extends JsonDecorator {
+public class JsonBlacklistFilter extends JsonDecorator {
     private String excludedKey;
 
-    public JsonFilter(JSONObject jsonObject, String excludedKey) {
+    public JsonBlacklistFilter(JSONObject jsonObject, String excludedKey) {
         super(jsonObject);
         this.excludedKey = excludedKey;
     }
