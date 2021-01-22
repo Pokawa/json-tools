@@ -41,6 +41,10 @@ public class JsonTransformer {
             else if (transformation.startsWith("include")){
                 decorators = new JsonWhitelistFilter(decorators,transformation.substring(7));
             }
+            //Pointing text differences
+            else if (transformation.equalsIgnoreCase("textDif")){
+                decorators = new JsonTextDifference(decorators);
+            }
         }
         return decorators.getJson();
     }
