@@ -33,23 +33,23 @@ public class JsonTextDifference extends JsonDecorator{
 
 
         if(Str.startsWith("<splitPoint>") && Str.endsWith("<splitPoint>") ||
-                (Str.startsWith("\r\n") && Str.endsWith("<splitPoint>")) ||
+                (Str.startsWith("\n") && Str.endsWith("<splitPoint>")) ||
                 (Str.startsWith("<splitPoint>") && Str.endsWith("\n"))){
             return "missing args";
         }
 
 
-        if(Str.startsWith("<splitPoint>\r\n")){
-            Str = "\r\n" + Str;
+        if(Str.startsWith("<splitPoint>\n")){
+            Str = "\n" + Str;
         }
 
         if(Str.endsWith("<splitPoint>")){
-            Str = Str + "\r\n";
+            Str = Str + "\n";
         }
 
 
 
-        String[] StrTable = Str.split("\r\n<splitPoint>\r\n");
+        String[] StrTable = Str.split("\n<splitPoint>\n");
 
         if (StrTable.length == 1){
             String[] newStrTable = {StrTable[0],""};
@@ -73,7 +73,11 @@ public class JsonTextDifference extends JsonDecorator{
         Vector<String> VString = new Vector<String>();
         StringBuilder endString = new StringBuilder();
         for (DiffRow row : rows) {
-            VString.add( row.getOldLine() + "\r\n<splitPoint>\r\n" + row.getNewLine());
+            VString.add( row.getOldLine());
+        }
+        VString.add("\n<splitPoint>\n");
+        for (DiffRow row : rows) {
+            VString.add( row.getNewLine());
         }
         for (String str : VString){
             endString.append(str);
